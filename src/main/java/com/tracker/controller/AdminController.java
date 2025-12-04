@@ -1,9 +1,11 @@
 package com.tracker.controller;
 
+import com.tracker.dto.StatCount;
 import com.tracker.model.Task;
 import com.tracker.model.User;
 import com.tracker.service.TaskService;
 import com.tracker.service.UserService;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -25,20 +27,21 @@ public class AdminController {
     private final TaskService taskService;
 
     @GetMapping("/users")
+    @Operation(summary = "Получить всех пользователей")
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/users/{userId}/tasks")
+    @Operation(summary = "Получить задачи пользователя")
     public ResponseEntity<List<Task>> getUserTasks(@PathVariable Long userId) {
         User user = userService.getUserById(userId);
         return ResponseEntity.ok(taskService.getTasksByUser(user));
     }
 
     @GetMapping("/statistics/status")
-    public ResponseEntity<List<Map<String, Object>>> getTaskStatisticsByStatus() {
-        // Получаем статистику для всех пользователей
-        // В реальном приложении можно сделать агрегацию по всем пользователям
+    @Operation(summary = "Получить задачи пользователя")
+    public ResponseEntity<StatCount> getTaskStatisticsByStatus() {// Получаем статистику для всех пользователей
         User firstUser = userService.getAllUsers().get(0);
         return ResponseEntity.ok(taskService.getTaskStatisticsByStatus(firstUser));
     }

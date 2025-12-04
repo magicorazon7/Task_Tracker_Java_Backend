@@ -21,11 +21,13 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping // получить задачи пользователя
+    @Operation(summary = "Получить задачи пользователя")
     public ResponseEntity<List<Task>> getAllTasks(@AuthenticationPrincipal User user) {
         return ResponseEntity.ok(taskService.getTasksByUser(user));
     }
 
     @GetMapping("/group/{groupId}") // получить задачи группы
+    @Operation(summary = "Получить задачи выбранной группы")
     public ResponseEntity<List<Task>> getTasksByGroup(
             @PathVariable Long groupId,
             @AuthenticationPrincipal User user) {
@@ -33,6 +35,7 @@ public class TaskController {
     }
 
     @PostMapping // создание задачм
+    @Operation(summary = "Создать задачи с описанием")
     public ResponseEntity<Task> createTask(
             @RequestParam String title,
             @RequestParam(required = false) String description,
@@ -42,6 +45,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}") // обновление задачи
+    @Operation(summary = "Редактировать задачу")
     public ResponseEntity<Task> updateTask(
             @PathVariable Long id,
             @RequestParam String title,
@@ -53,6 +57,7 @@ public class TaskController {
     }
 
     @PutMapping("/{id}/status") // обновить статус задачи
+    @Operation(summary = "Изменить статус задачи")
     public ResponseEntity<Task> updateTaskStatus(
             @PathVariable Long id,
             @RequestParam TaskStatus status,

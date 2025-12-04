@@ -1,5 +1,7 @@
 package com.tracker.repository;
 
+import com.tracker.dto.GroupCount;
+import com.tracker.dto.StatCount;
 import com.tracker.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,11 +15,30 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findByUserId(Long userId);
     List<Task> findByUserIdAndGroupId(Long userId, Long groupId);
 
-    // пример изменения в TaskRepository
-    @Query("SELECT t.status as status, COUNT(t) as count FROM Task t WHERE t.user.id = :userId GROUP BY t.status")
-    List<Map<String, Object>> getTaskStatisticsByStatus(Long userId);
+    // кринжанул
+//    @Query("SELECT t.status as status, COUNT(t) as count FROM Task t WHERE t.user.id = :userId GROUP BY t.status")
+//    List<Map<String, Object>> getTaskStatisticsByStatus(Long userId);
+//
+//    @Query("SELECT COALESCE(g.name, 'Без группы') as groupName, COUNT(t) as count " +
+//            "FROM Task t LEFT JOIN t.group g WHERE t.user.id = :userId GROUP BY g.name")
+//    List<Map<String, Object>> getTaskStatisticsByGroup(Long userId);
 
-    @Query("SELECT COALESCE(g.name, 'Без группы') as groupName, COUNT(t) as count " +
-            "FROM Task t LEFT JOIN t.group g WHERE t.user.id = :userId GROUP BY g.name")
-    List<Map<String, Object>> getTaskStatisticsByGroup(Long userId);
+    @Query("""
+        SELECT t.status AS status,
+               COUNT(t) AS count
+        FROM Task t
+        WHERE t.user.id = :userId
+        GROUP BY t.status
+    """)
+    List<StatCount> getTaskStatisticsByStatus(Long userId);
+
+    @Query("""
+        SELECT COALESCE(g.name, 'Без группы') AS groupName,
+               COUNT(t) AS count
+        FROM Task t
+        LEFT JOIN t.group g
+        WHERE t.user.id = :userId
+        GROUP BY g.name
+    """)
+    List<GroupCount> getTaskStatisticsByGroup(Long userId);
 }

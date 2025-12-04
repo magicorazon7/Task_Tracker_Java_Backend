@@ -1,5 +1,7 @@
 package com.tracker.service;
 
+import com.tracker.dto.GroupCount;
+import com.tracker.dto.StatCount;
 import com.tracker.model.Task;
 import com.tracker.model.TaskGroup;
 import com.tracker.model.TaskStatus;
@@ -84,11 +86,11 @@ public class TaskService {
         taskRepository.delete(task);
     }
 
-    public List<Map<String, Object>> getTaskStatisticsByStatus(User user) {
+    public List<StatCount> getTaskStatisticsByStatus(User user) {
         return taskRepository.getTaskStatisticsByStatus(user.getId());
     }
 
-    public List<Map<String, Object>> getTaskStatisticsByGroup(User user) {
+    public List<GroupCount> getTaskStatisticsByGroup(User user) {
         return taskRepository.getTaskStatisticsByGroup(user.getId());
     }
 
