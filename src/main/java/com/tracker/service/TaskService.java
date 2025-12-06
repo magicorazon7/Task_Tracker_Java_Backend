@@ -85,12 +85,12 @@ public class TaskService {
         taskRepository.delete(task);
     }
 
-    public List<StatCount> getTaskStatisticsByStatus(User user) {
-        return taskRepository.getTaskStatisticsByStatus(user.getId());
+    public List<StatCount> getTaskStatisticsByStatusForAllUsers() {
+        return taskRepository.getTaskStatisticsByStatusForAllUsers();
     }
 
-    public List<GroupCount> getTaskStatisticsByGroup(User user) {
-        return taskRepository.getTaskStatisticsByGroup(user.getId());
+    public List<GroupCount> getTaskStatisticsByGroupForAllUsers() {
+        return taskRepository.getTaskStatisticsByGroupForAllUsers();
     }
 
     public List<Task> getAllTasks() {

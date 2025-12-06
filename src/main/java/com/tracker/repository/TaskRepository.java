@@ -15,21 +15,21 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findByUserIdAndGroupId(Long userId, Long groupId);
 
     @Query("""
-        SELECT t.status AS status,
-               COUNT(t) AS count
-        FROM Task t
-        WHERE t.user.id = :userId
-        GROUP BY t.status
-    """)
-    List<StatCount> getTaskStatisticsByStatus(Long userId); // стата по статусам задач
+    SELECT NEW com.tracker.dto.StatCount(t.status, COUNT(t))
+    FROM Task t
+    GROUP BY t.status
+""")
+    List<StatCount> getTaskStatisticsByStatusForAllUsers();
 
     @Query("""
-        SELECT COALESCE(g.name, 'Без группы') AS groupName,
-               COUNT(t) AS count
-        FROM Task t
-        LEFT JOIN t.group g
-        WHERE t.user.id = :userId
-        GROUP BY g.name
-    """)
-    List<GroupCount> getTaskStatisticsByGroup(Long userId); // стата по группам
+    SELECT NEW com.tracker.dto.GroupCount(
+        COALESCE(g.name, 'Без группы'), 
+        COUNT(t)
+    )
+    FROM Task t
+    LEFT JOIN t.group g
+    GROUP BY g.name
+""")
+    List<GroupCount> getTaskStatisticsByGroupForAllUsers();
+
 }

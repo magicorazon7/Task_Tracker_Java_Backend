@@ -1,6 +1,13 @@
 package com.tracker.dto;
 
-public interface GroupCount {
-    String getGroupName();
-    Long getCount();
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class GroupCount {
+    private String groupName;
+    private Long count;
 }

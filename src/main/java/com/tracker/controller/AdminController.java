@@ -42,19 +42,6 @@ public class AdminController {
         return ResponseEntity.ok(taskService.getTasksByUser(user));
     }
 
-    @GetMapping("/statistics/status")
-    @Operation(summary = "Получить статистику по статусам")
-    public ResponseEntity<List<StatCount>> getTaskStatisticsByStatus() {// Получаем статистику для всех пользователей
-        User firstUser = userService.getAllUsers().get(0);
-        return ResponseEntity.ok(taskService.getTaskStatisticsByStatus(firstUser));
-    }
-
-    @GetMapping("/statistics/group")
-    @Operation(summary = "Получить статистику по группам")
-    public ResponseEntity<List<GroupCount>> getTaskStatisticsByGroup() {
-        User firstUser = userService.getAllUsers().get(0);
-        return ResponseEntity.ok(taskService.getTaskStatisticsByGroup(firstUser));
-    }
     @GetMapping("/tasks")
     @Operation(summary = "Получить список всех задач в системе")
     public ResponseEntity<List<Task>> getAllTasks() {
@@ -67,4 +54,15 @@ public class AdminController {
         return ResponseEntity.ok(taskGroupService.getAllGroups());
     }
 
+    @GetMapping("/statistics/status")
+    @Operation(summary = "Получить статистику по статусам по всем пользователям")
+    public ResponseEntity<List<StatCount>> getTaskStatisticsByStatus() {
+        return ResponseEntity.ok(taskService.getTaskStatisticsByStatusForAllUsers());
+    }
+
+    @GetMapping("/statistics/group")
+    @Operation(summary = "Получить статистику по группам по всем пользователям")
+    public ResponseEntity<List<GroupCount>> getTaskStatisticsByGroup() {
+        return ResponseEntity.ok(taskService.getTaskStatisticsByGroupForAllUsers());
+    }
 }
