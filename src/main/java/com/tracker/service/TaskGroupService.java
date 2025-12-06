@@ -21,6 +21,10 @@ public class TaskGroupService {
         return taskGroupRepository.findByUserId(user.getId());
     }
 
+    public List<TaskGroup> getAllGroups() {
+        return taskGroupRepository.findAll();
+    }
+
     public TaskGroup createGroup(String name, User user) {
         if (user == null || user.getId() == null) {
             throw new IllegalArgumentException("User or user id is null");
@@ -33,8 +37,8 @@ public class TaskGroupService {
     }
 
     public TaskGroup updateGroup(Long id, String name, User user) {
-        TaskGroup group = taskGroupRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Group not found with id: " + id));
+        TaskGroup group = taskGroupRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("Group not found with id: " + id));
 
         if (!group.getUser().getId().equals(user.getId())) {
             throw new RuntimeException("You don't have permission to update this group");

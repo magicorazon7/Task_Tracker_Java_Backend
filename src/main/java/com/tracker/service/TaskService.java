@@ -94,6 +94,10 @@ public class TaskService {
         return taskRepository.getTaskStatisticsByGroup(user.getId());
     }
 
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
+    }
+
     public Task updateTaskStatus(Long id, TaskStatus status, User user) {
         Task task = taskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found with id: " + id));

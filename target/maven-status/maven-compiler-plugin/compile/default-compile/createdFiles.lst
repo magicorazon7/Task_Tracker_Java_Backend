@@ -16,6 +16,7 @@ com\tracker\config\OpenApiConfig.class
 com\tracker\service\UserService.class
 com\tracker\security\CustomUserDetailsService.class
 com\tracker\model\TaskGroup$TaskGroupBuilder.class
+com\tracker\dto\StatCount.class
 com\tracker\model\Task$TaskBuilder.class
 com\tracker\repository\UserRepository.class
 com\tracker\security\JwtRequestFilter.class
@@ -24,6 +25,7 @@ com\tracker\model\Role.class
 com\tracker\service\AuthService.class
 com\tracker\security\SecurityConfig.class
 com\tracker\dto\AuthResponse$AuthResponseBuilder.class
+com\tracker\dto\GroupCount.class
 com\tracker\model\TaskStatus.class
 com\tracker\security\JwtUtil.class
 com\tracker\repository\TaskRepository.class

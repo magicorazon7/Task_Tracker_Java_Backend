@@ -2,8 +2,10 @@ C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\AuthRequest.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\Role.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\TaskRepository.java
+C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\GroupCount.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AuthController.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\UserRepository.java
+C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\StatCount.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AdminController.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\User.java
 C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\TaskStatus.java

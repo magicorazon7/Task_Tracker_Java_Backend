@@ -1,8 +1,11 @@
 package com.tracker.controller;
 
+import com.tracker.dto.GroupCount;
 import com.tracker.dto.StatCount;
 import com.tracker.model.Task;
+import com.tracker.model.TaskGroup;
 import com.tracker.model.User;
+import com.tracker.service.TaskGroupService;
 import com.tracker.service.TaskService;
 import com.tracker.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -25,31 +28,44 @@ public class AdminController {
 
     private final UserService userService;
     private final TaskService taskService;
+    private final TaskGroupService taskGroupService;
 
     @GetMapping("/users")
-    @Operation(summary = "Получить всех пользователей")
+    @Operation(summary = "Получить статистику по пользователям")
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/users/{userId}/tasks")
-    @Operation(summary = "Получить задачи пользователя")
+    @Operation(summary = "Получить статистику по задачам")
     public ResponseEntity<List<Task>> getUserTasks(@PathVariable Long userId) {
         User user = userService.getUserById(userId);
         return ResponseEntity.ok(taskService.getTasksByUser(user));
     }
 
     @GetMapping("/statistics/status")
-    @Operation(summary = "Получить задачи пользователя")
-    public ResponseEntity<StatCount> getTaskStatisticsByStatus() {// Получаем статистику для всех пользователей
+    @Operation(summary = "Получить статистику по статусам")
+    public ResponseEntity<List<StatCount>> getTaskStatisticsByStatus() {// Получаем статистику для всех пользователей
         User firstUser = userService.getAllUsers().get(0);
         return ResponseEntity.ok(taskService.getTaskStatisticsByStatus(firstUser));
     }
 
     @GetMapping("/statistics/group")
-    public ResponseEntity<List<Map<String, Object>>> getTaskStatisticsByGroup() {
-        // Получаем статистику для всех пользователей
+    @Operation(summary = "Получить статистику по группам")
+    public ResponseEntity<List<GroupCount>> getTaskStatisticsByGroup() {
         User firstUser = userService.getAllUsers().get(0);
         return ResponseEntity.ok(taskService.getTaskStatisticsByGroup(firstUser));
     }
+    @GetMapping("/tasks")
+    @Operation(summary = "Получить список всех задач в системе")
+    public ResponseEntity<List<Task>> getAllTasks() {
+        return ResponseEntity.ok(taskService.getAllTasks());
+    }
+
+    @GetMapping("/groups")
+    @Operation(summary = "Получить все группы в системе")
+    public ResponseEntity<List<TaskGroup>> getAllGroups() {
+        return ResponseEntity.ok(taskGroupService.getAllGroups());
+    }
+
 }
