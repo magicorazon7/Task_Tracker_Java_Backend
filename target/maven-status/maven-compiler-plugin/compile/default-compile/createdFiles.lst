@@ -3,6 +3,7 @@ com\tracker\model\Task.class
 com\tracker\controller\GroupController.class
 com\tracker\controller\AdminController.class
 com\tracker\service\TaskService.class
+com\tracker\config\InitAdmin.class
 com\tracker\model\TaskGroup.class
 com\tracker\controller\AuthController.class
 com\tracker\dto\RegisterRequest.class

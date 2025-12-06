@@ -1,27 +1,28 @@
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\TaskService.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\AuthRequest.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\Role.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\TaskRepository.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\GroupCount.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AuthController.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\UserRepository.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\StatCount.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AdminController.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\User.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\TaskStatus.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\TaskController.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\config\OpenApiConfig.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\TaskGroupRepository.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\JwtUtil.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\FinalTaskApplication.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\TaskGroup.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\JwtRequestFilter.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\TaskGroupService.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\AuthResponse.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\UserService.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\Task.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\RegisterRequest.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\CustomUserDetailsService.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\GroupController.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\SecurityConfig.java
-C:\Users\zamol\OneDrive\Рабочий стол\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\AuthService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\CustomUserDetailsService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\TaskGroupService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\config\InitAdmin.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\TaskGroupRepository.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\AuthResponse.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\AuthRequest.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\UserRepository.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\FinalTaskApplication.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\GroupController.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\SecurityConfig.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AdminController.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\JwtUtil.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\Role.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\TaskController.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\TaskGroup.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\controller\AuthController.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\AuthService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\GroupCount.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\User.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\repository\TaskRepository.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\Task.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\security\JwtRequestFilter.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\model\TaskStatus.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\StatCount.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\TaskService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\service\UserService.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\config\OpenApiConfig.java
+C:\javaprojects\Task_Tracker_Java_Backend\src\main\java\com\tracker\dto\RegisterRequest.java

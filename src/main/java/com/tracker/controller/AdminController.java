@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -31,13 +30,13 @@ public class AdminController {
     private final TaskGroupService taskGroupService;
 
     @GetMapping("/users")
-    @Operation(summary = "Получить статистику по пользователям")
+    @Operation(summary = "Получить всех пользователей")
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/users/{userId}/tasks")
-    @Operation(summary = "Получить статистику по задачам")
+    @Operation(summary = "Получить задачи выбранного пользователя")
     public ResponseEntity<List<Task>> getUserTasks(@PathVariable Long userId) {
         User user = userService.getUserById(userId);
         return ResponseEntity.ok(taskService.getTasksByUser(user));
